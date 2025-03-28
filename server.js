@@ -45,7 +45,7 @@ const statusRoutes = require('./routes/StatusRoutes');
 const simRoutes = require("./routes/simRoutes");
 const authRouter = require('./routes/authRouter');
 const allRoute = require ("./routes/allformRoutes")
-
+const paymentRoutes = require('./routes/paymentRoutes'); 
 // Initialize Admin
 authController.initializeAdmin();
 
@@ -57,7 +57,7 @@ app.use('/api/status', statusRoutes);
 app.use("/api/sim", simRoutes);
 app.use('/api/auth', authRouter);
 app.use('/api/all',allRoute);
-
+app.use('/api', paymentRoutes);
 // Increase Global Max Listeners
 events.defaultMaxListeners = 20;
 
